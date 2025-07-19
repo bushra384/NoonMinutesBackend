@@ -254,6 +254,10 @@ def scrape_noon_products():
     finally:
         is_scraping = False
 
+@app.route("/", methods=["GET"])
+def hello():
+    return jsonify("Hello")
+
 @app.route("/search", methods=["GET"])
 def search():
     result = scrape_noon_products()
